@@ -2,7 +2,6 @@ function fib() {
     // Some variables here
     var fcount = 0;
     var ncount = 1;
-    console.log('fib count', fcount);
     function nacci() {
         let sum;
         sum = ncount + fcount;
@@ -11,7 +10,7 @@ function fib() {
         fcount = sum;
 
     }
-    return nacci
+    return nacci;
 }
 var fibCounter = fib();
 fibCounter(); // should console.log "1"

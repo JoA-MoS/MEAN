@@ -8,7 +8,7 @@ var _ = {
     reduce: function (arr, callback, accumulator = 0) {
         let r = accumulator;
         for (var i = 0; i < arr.length; i++) {
-            r += callback(arr[i]);
+            r = callback(r, arr[i]);
         }
         return r;
     },
@@ -48,7 +48,7 @@ let r = _.map(t, function (v) { return v * 2; });
 console.log(r);
 
 
-console.log(_.reduce(r, function (v) { return v + 3; }));
+console.log(_.reduce(r, function (sum, n) { return sum + n + 3; }));
 
 
 

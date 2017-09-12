@@ -1,0 +1,9 @@
+#chat-window{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1 solid ;
+    box-shadow: 1px 1px 5px #555 inset;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 200px;
+}

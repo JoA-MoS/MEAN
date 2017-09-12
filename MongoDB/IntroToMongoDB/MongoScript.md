@@ -1,0 +1,30 @@
+#Intro to MongoDB
+
+1. use my_first_db
+2. db.createCollection("students")
+3. { name: "Justin", home_state: "WA", lucky_number: 35, birthday: { month: 07, day: 22, year: 1982 } }
+4. db.students.insert({ name: "Justin", home_state: "WA", lucky_number: 35, birthday: { month: 07, day: 22, year: 1982 } })
+   db.students.insert({ name: "Brayden", home_state: "WA", lucky_number: 2, birthday: { month: 08, day: 23, year: 2015 } })
+   db.students.insert({ name: "Alisha", home_state: "WA", lucky_number: 36, birthday: { month: 05, day: 12, year: 1981 } })
+   db.students.insert({ name: "Brandon", home_state: "WA", lucky_number: 12, birthday: { month: 07, day: 22, year: 2001 } })
+   db.students.insert({ name: "Byron", home_state: "WA", lucky_number: 15, birthday: { month: 07, day: 22, year: 1990 } })
+5. db.students.find()
+6. db.students.find({ $or: [{ home_state: "WA" }, { home_state: "CA" }] })
+7. db.students.find({lucky_number: {$gt: 3}})
+    db.students.find({lucky_number: {$lte: 10}})
+    db.students.find({lucky_number: {$gte: 1, $lte:9}})
+8. db.students.updateMany({},{$set: {interests:['coding', 'brunch', 'MongoDB']}})
+9. db.students.update({name:"Justin"}, {$addToSet: {interests:'Skiing'}})
+    db.students.update({name:"Brayden"}, {$addToSet: {interests:'Soccer'}})
+    db.students.update({name:"Alisha"}, {$addToSet: {interests:'Gardening'}})
+10. db.students.update({name:"Brandon"}, {$addToSet: {interests:'Taxes'}})
+11. db.students.update({name:"Brandon"}, {$pull: {interests:'Taxes'}})
+12. db.students.remove({name:"Brandon"})
+13. db.students.remove({ $or: [{ home_state: "WA" }, { home_state: "CA" }] })
+14. db.students.remove({lucky_number: {$gt: 35}}, true)
+15. db.students.updateMany({},{$set: {number_of_belts:0}})
+16. db.students.updateMany({home_state:"WA"},{$inc: {number_of_belts:1}})
+17. db.students.updateMany( {}, { $rename: { "number_of_belts": "belts_earned" } } )
+18. db.students.updateMany( {}, { $unset: { lucky_number:"" } } )
+19. db.students.updateMany( {}, { $set: { updated_on:new Date() } } )
+

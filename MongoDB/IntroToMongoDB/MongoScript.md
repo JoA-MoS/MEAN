@@ -27,4 +27,3 @@
 17. db.students.updateMany( {}, { $rename: { "number_of_belts": "belts_earned" } } )
 18. db.students.updateMany( {}, { $unset: { lucky_number:"" } } )
 19. db.students.updateMany( {}, { $set: { updated_on:new Date() } } )
-

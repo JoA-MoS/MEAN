@@ -24,7 +24,6 @@ io.sockets.on('connection', function (socket) {
     console.log("Client/socket id is: ", socket.id);
 
     socket.on("button_clicked", function (data) {
-        console.log('Someone clicked a button!  Reason: ' + data);
         io.emit('new_msg', data);
     });
 

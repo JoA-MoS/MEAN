@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-    var person = prompt("Please enter your name", "Harry Potter");
-    var socket = io.connect();
+    let person = prompt("Please enter your name", "Harry Potter");
+    let socket = io.connect();
     console.log('connected');
 
     $('#btnSendMsg').click(function () {
-        msg = $('#msg').val();
+        let msg = $('#msg').val();
         socket.emit("button_clicked", { user: person, message: msg, time: new Date() });
         $('#msg').val('');
         $('#msg').focus();
@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
 
     function scrollSmoothToBottom(id) {
-        var div = document.getElementById(id);
+        let div = document.getElementById(id);
         $('#' + id).animate({
             scrollTop: div.scrollHeight - div.clientHeight
         }, 500);

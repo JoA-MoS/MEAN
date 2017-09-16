@@ -28,8 +28,15 @@ export class NoteListComponent implements OnInit, OnDestroy {
     this.noteService.getAllNotes(notes => {
       // sort the resultes in descending order
       this.notes = notes.sort((a: Note, b: Note) => {
-        return a.createdAt < b.createdAt;
+        if (a.createdAt < b.createdAt) {
+          return 1;
+        } else if (a.createdAt > b.createdAt) {
+          return -1;
+        } else {
+          return 0;
+        }
       });
+      // this.notes.sort((a: Note, b: Note) => { return a.createdAt < b.createdAt })
     });
   }
 

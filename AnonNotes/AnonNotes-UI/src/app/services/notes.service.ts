@@ -1,7 +1,9 @@
+import { INote } from './../models/inote';
 import { Note } from './../models/note';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
+
 // import { INote } from '../models/inote';
 
 @Injectable()
@@ -24,7 +26,8 @@ export class NoteService {
   constructor(private http: HttpClient) { }
 
   getAllNotes(callback) {
-    this.http.get<Note[]>(this.config.url).subscribe(
+    this.http.get<INote[]>(this.config.url)
+      .subscribe(
       data => {
         console.log(data);
         this.notes = data;

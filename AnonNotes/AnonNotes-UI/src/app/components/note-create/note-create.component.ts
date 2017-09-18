@@ -40,10 +40,10 @@ export class NoteCreateComponent implements OnInit {
     console.log('trying to save');
     this.note = this.prepareSaveNote();
     this.noteService.createNote(this.note, () => {
+      this.noteForm.reset();
 
     }); //.subscribe(/* error handling */);
     // this.ngOnChanges();
-    this.noteForm.reset();
   }
 
 }

@@ -16,7 +16,7 @@ export class QuoteListComponent implements OnInit, OnDestroy {
   constructor(private quotesService: QuotesService) {
     this.subscription = quotesService.quoteAnnounced$.subscribe(
       quote => {
-        console.log("Subscription")
+        console.log('Subscription');
         this.getQuotes();
       });
     this.getQuotes();

@@ -15,7 +15,6 @@ import { Subject } from 'rxjs/Subject';
 export class QuotesService extends AbstractRestApiService<Quote> {
   // Extend/Overwrite the QuoteService as Needed;
   private quoteCreatedSource = new Subject();
-  // Observable string streams
   quoteAnnounced$ = this.quoteCreatedSource.asObservable();
 
   announceQuoteCreated() {
@@ -30,6 +29,7 @@ export class QuotesService extends AbstractRestApiService<Quote> {
 
   create(obj: Quote): Observable<Object> {
     const result = super.create(obj);
+
     return result;
 
   }

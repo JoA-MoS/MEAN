@@ -1,0 +1,31 @@
+{
+    "errors": {
+        "votes": {
+            "message": "Path `votes` is required.",
+            "name": "ValidatorError",
+            "properties": {
+                "type": "required",
+                "message": "Path `{PATH}` is required.",
+                "path": "votes"
+            },
+            "kind": "required",
+            "path": "votes",
+            "$isValidatorError": true
+        },
+        "author": {
+            "message": "Path `author` is required.",
+            "name": "ValidatorError",
+            "properties": {
+                "type": "required",
+                "message": "Path `{PATH}` is required.",
+                "path": "author"
+            },
+            "kind": "required",
+            "path": "author",
+            "$isValidatorError": true
+        }
+    },
+    "_message": "Quote validation failed",
+    "message": "Quote validation failed: votes: Path `votes` is required., author: Path `author` is required.",
+    "name": "ValidationError"
+}

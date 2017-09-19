@@ -1,11 +1,13 @@
 
 import { RestApiServiceConfig } from './../models/rest-api-service-config';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient } from '@angular/common/http';
 
 
 export abstract class AbstractRestApiService<T> {
 
+  private _navItemSource = new BehaviorSubject<number>(0);
 
   constructor(protected http: HttpClient, protected config: RestApiServiceConfig) {
 

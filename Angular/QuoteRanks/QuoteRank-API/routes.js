@@ -7,6 +7,6 @@ router.route('/').get((req, res) => {
   res.json({ message: 'Welcome to quoterank-api API!' });
 });
 
-router.use('/quote', quote);
+router.use('/quotes', quote);
 
 module.exports = router;

@@ -1,3 +1,40 @@
-<p>
-  quote-display works!
-</p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<div class="card quote-card">
+  <div class="card-block">
+    <div class="card-body row">
+      <div class="col-8">
+        <p class="quote-text">"{{quote.quoteText}}"</p>
+        <p>-{{quote.author}}</p>
+      </div>
+      <div class="col-2">
+        <h2 style="vertical-align:middle;">{{quote.votes}}</h2>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-success btn-block" (click)="voteQuoteUp($event)">
+          Vote Up
+        </button>
+        <button type="button" class="btn btn-danger btn-block" (click)="voteQuoteDown($event)">
+          Vote Down
+        </button>
+        <button type="button" class="btn btn-dark btn-block" (click)="deleteQuote($event)">
+          Delete
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

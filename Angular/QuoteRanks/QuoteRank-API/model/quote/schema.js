@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const quoteSchema = new Schema({
   quoteText: { type: String, required: true },
-  author: { type: String, required: true }
+  author: { type: String, required: true },
+  votes: { type: Number, required: true },
 });
 
 

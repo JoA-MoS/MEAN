@@ -1,3 +1,5 @@
-<p>
-  quote-list works!
-</p>
+<div class="quote-list">
+  <ng-container *ngFor="let quote of quotes">
+    <app-quote-display [quote]="quote" (onVote)="onVote($event)" (onDelete)="onDelete($event)"></app-quote-display>
+  </ng-container>
+</div>

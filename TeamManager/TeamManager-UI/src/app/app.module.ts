@@ -1,3 +1,4 @@
+import { PlayerService } from './services/player/player.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,7 +27,7 @@ import { PlayerAdminComponent } from './components/player-admin/player-admin.com
     NgbModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

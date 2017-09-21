@@ -6,7 +6,7 @@ class Controller {
   create(req, res, next) {
     this.facade.create(req.body)
       .then(doc => res.status(201).json(doc))
-      .catch(err => next(err));
+      .catch(err => res.status(400).json(err));
   }
 
   find(req, res, next) {

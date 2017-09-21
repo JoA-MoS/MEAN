@@ -7,12 +7,12 @@
     </tr>
   </thead>
   <tbody class="table-striped">
-    <tr>
-      <td scope="row"></td>
-      <td></td>
-      <td><a href="#" class="btn btn-danger">
-          <span class="fa fa-trash-o fa-lg"></span> 
-        </a></td>
+    <tr *ngFor="let player of players$ | async | orderByName">
+      <td scope="row">{{player.name}}</td>
+      <td>{{player.preferredPosition}}</td>
+      <td><button class="btn btn-danger" (click)="deletePlayer(player)">
+          <span class="fa fa-trash-o fa-lg"> </span> DELETE
+      </button></td>
     </tr>
   </tbody>
 </table>

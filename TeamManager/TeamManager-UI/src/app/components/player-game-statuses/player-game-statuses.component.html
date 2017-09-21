@@ -1,3 +1,27 @@
-<p>
-  player-game-statuses works!
-</p>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Player Name</th>
+      <th style="width:290px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="table-striped">
+    <tr *ngFor="let player of players$ | async | orderByName">
+      <td scope=" row ">{{player.name}}</td>
+      <td>
+
+        <div class="btn-group" ngbRadioGroup name="gameStatus" [(ngModel)]="player.gameStatuses[gameId]" (change)="statusChanged(player)">
+          <label ngbButtonLabel class="btn btn-outline-success ">
+            <input ngbButton type="radio"  value="2" > Playing
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-danger ">
+            <input ngbButton type="radio" value="1"> Not Playing
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-warning ">
+            <input ngbButton type="radio" value="0"> Undecided
+          </label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

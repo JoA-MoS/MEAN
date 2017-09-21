@@ -1,3 +1,4 @@
+<h2>Add Player</h2>
 <form [formGroup]="playerForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group">
     <label for="">Player Name:</label>
@@ -10,5 +11,3 @@
   <button type="submit" class="btn btn-success" [disabled]="playerForm.pristine || !playerForm.valid">ADD</button>
 
 </form>
-
-<pre>{{ playerForm.valid }}</pre>

@@ -19,7 +19,8 @@ import { ModalConfirmComponent } from './components/modal-confirm/modal-confirm.
     AppComponent,
     QuoteCreateComponent,
     QuoteDisplayComponent,
-    QuoteListComponent
+    QuoteListComponent,
+    ModalConfirmComponent
   ],
   entryComponents: [ModalConfirmComponent],
   imports: [

@@ -1,5 +1,6 @@
 <div class="quote-list">
-  <ng-container *ngFor="let quote of quotes">
-    <app-quote-display [quote]="quote" (onVote)="onVote($event)" (onDelete)="onDelete($event)"></app-quote-display>
+  <div><code>observable|async</code>: Time: {{ time | async }}</div>
+  <ng-container *ngFor="let quote of quotesObservable | async">
+    <app-quote-display [quote]="quote"></app-quote-display>
   </ng-container>
 </div>
